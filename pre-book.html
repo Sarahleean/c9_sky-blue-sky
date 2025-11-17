@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre book</title>
+</head>
+<style>
+     body{
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f3edd0;
+        margin: 0;
+        padding: 0;
+    }
+
+       /*header startss here*/
+    header{
+        top: 0;
+        position: sticky;
+        margin: 0;
+    }
+    .head{
+       
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0 5px;
+        background-color: #1b222c;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #c15960;
+    }
+    .head .logo{
+        width: 250px;
+    }
+    .surround{
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .surround2{
+        display: none;
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .dash{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .dash2{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .menu{
+        width: 100%;
+        position: absolute;
+        display: none;
+        background-color: #1b222c;
+        padding: 5px 0;
+        margin: 0;
+        color: #9d9d9d;
+       
+    }
+    .menu .acc{
+        width: 80%;
+        margin: 0;
+        padding: 10px 10px;
+        
+    }
+    .menu .acct span{
+        margin: 0 10px;
+       
+    }
+    .menu .acc:active{
+        background-color: #c15960;
+    }
+   .menu ul{
+        transition: .7s;
+        margin: 0;
+        padding: 0;
+    }
+    .menu ul a{
+        text-decoration: none;
+        color: #b1b1b8;
+    }
+    .menu  ul div{
+        border-bottom: 1px solid #c15960;
+    }
+    .menu ul div:last-child{
+        border-bottom: none;
+    }
+    .menu ul li{
+        cursor: pointer;
+        margin: 0;
+        padding:8px 26px;
+        list-style-type: none;
+    }
+    .menu ul li{
+        color: #9d9d9d;
+        text-decoration: none;
+   }
+   
+    .menu ul li:active{
+        background-color: #c15960; 
+    }
+    .details{
+        display: none;
+    }
+
+
+
+    /*header stops here*/
+    
+    /*body starts here*/
+    section{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    section .logo2{
+        margin: 20px ;
+        width: 90%;
+        height: 100px;
+    }
+    section h2{
+        color: #589f99;
+        margin: 0 20px;
+    }
+    section .wd{
+        font-size: 14px;
+        margin: 10px 20px;
+        padding-bottom: 20px;
+    
+    }
+    section span{
+        font-size: 12px;
+        align-self: center;
+    }
+    section a{
+        
+        color: #337ab7;
+        text-decoration: none;
+    }
+    section h3{
+        padding-bottom: 5px;
+        
+        margin: 20px 20px 20px
+    }
+
+    .whole ul li{
+        font-size: 18px;
+        width: auto;
+        margin: 0;
+        padding:1px 0;
+        list-style-type:disc;
+    }
+    .whole button{
+        border: 1px solid#7e8082;
+        background-color: #5884b4;
+        color:  white;
+        width: 120px;
+        height: 28px;
+        position: relative;
+        left: 20px;
+    }
+    .whole span{
+        font-size: 18px;
+        margin: 10px 20px;
+    }
+    
+    
+    
+    /*body stops here*/
+    </style>
+    <body>
+    
+        <header>
+    
+            <div class="head">
+                <img src="logo.JPG" class="logo" alt="cloud9adventures">
+                <div class="surround" id="bar" onclick="document.getElementById('menu').style.display='block'; document.getElementById('bar').style.display='none'; document.getElementById('bar2').style.display='block'">
+                    
+                    <div class="dash"></div>
+                    <div class="dash"></div>
+                    <div class="dash"></div>
+                    
+                </div>
+                <div class="surround2" id="bar2" onclick="document.getElementById('menu').style.display='none'; document.getElementById('bar2').style.display='none'; document.getElementById('bar').style.display='block'; document.getElementById('deta').style.display='none'">
+                   
+                    <div class="dash2"></div>
+                    <div class="dash2"></div>
+                    <div class="dash2"></div>
+                   
+                </div>
+            </div>
+    
+            <div class="menu" id="menu">
+            
+                <div  class="acc" onclick="document.getElementById('deta').style.display='block'" style="display: flex; align-items: center; gap: 16px;"><span>Your Account</span><img style="width: 16px; filter: invert(90%);" src="./angle-down.png" alt="drop down"></div>
+        
+                <ul class="details" id="deta">
+                
+                    <div>
+                        <li ><a href="profile.html">Your Profile</a></li>
+                        <li><a href="change password.html"> Change Password</a></li>
+                    </div>
+                    <div>
+                        <li><a href="reservation.html">Your Reservation</a></li>
+                    </div>
+                    <div>
+                        <li><a href="">Log Out</a></li>
+                    </div>
+    
+                </ul>
+                
+            </div>
+        </header>
+        <section class="whole">
+            <div ><img src="logo2.PNG" alt="music meets paradise"class="logo2"></div>
+            <h2>Jam Cruise 22 Pre-look </h2>
+            <h3>Jam Cruise 22 Pre=book</h3>
+            <ul>
+                <li>A $250 deposit per cabin (NOT per person) is
+                    required to secure your early spot in line for cabin selection.</li>
+                <li>Only ONE pre-book can be applied per cabin, ao alk willbr release/li>
+                <li>cabin price 22 lineup announcement later this spring.</li>
+                <li>The $250 Pre-book deposit will apply towards the total cost of your cabin upon cabin selection.</li>
+            </ul> 
+             <button>Start Reservation</button>
+            <span>f you already booked a reservation and are returning to pay a balance, please use the button below.</span>
+            <button>Your Reservation</button>
+        </section>

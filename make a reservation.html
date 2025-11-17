@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f3edd0;
+        margin: 0;
+        padding: 0;
+    }
+
+       /*header startss here*/
+    header{
+        top: 0;
+        position: sticky;
+        margin: 0;
+    }
+    .head{
+       
+        width: auto;
+        height: 50px;
+        margin: 0;
+        padding: 0 5px;
+        background-color: #1b222c;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #c15960;
+    }
+    .head .logo{
+        width: 250px;
+    }
+    .surround{
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .surround2{
+        display: none;
+        position: absolute;
+        right: 5px;
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .dash{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .dash2{
+       
+        border: none;
+        margin: 5px;
+        background-color: rgb(175, 105, 105);
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .menu{
+        width: 100%;
+        position: absolute;
+        display: none;
+        background-color: #1b222c;
+        padding: 5px 0;
+        color: #9d9d9d;
+       
+    }
+    .menu .acc{
+        margin: 0;
+        padding: 10px 10px;
+        
+    }
+    .menu .acct span{
+        margin: 0 10px;
+       
+    }
+    .menu .acc:active{
+        background-color: #c15960;
+    }
+    ul{
+        transition: .7s;
+        margin: 0;
+        padding: 0;
+    }
+    ul div{
+        border-bottom: 1px solid #c15960;
+    }
+    ul div:last-child{
+        border-bottom: none;
+    }
+    li{
+        cursor: pointer;
+        margin: 0;
+        padding:8px 26px;
+        list-style-type: none;
+    }
+   li a{
+    color: #9d9d9d;
+        text-decoration: none;
+   }
+   
+    li:active{
+        background-color: #c15960; 
+    }
+    .details{
+        display: none;
+    }
+    /*header stops here*/
+
+     /*body starts here*/

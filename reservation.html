@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation</title>
+</head>
+<style>
+       body{
+        width: 100%;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        font-family: fontmutal;
+        background-color: #f3edd0;
+        margin: 0;
+        padding: 0;
+    }
+     @font-face {
+        font-family: fontmutal;
+        src: url(./Montserrat-VariableFont_wght.ttf);
+    }
+
+
+       /*header startss here*/
+    header{
+        top: 0;
+        position: sticky;
+        margin: 0;
+    }
+    .head{
+       
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0 5px;
+        background-color: #1b222c;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #c15960;
+    }
+    .head .logo{
+        width: 250px;
+    }
+    .surround{
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .surround2{
+        display: none;
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .dash{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .dash2{
+       
+        border: none;
+        margin: 5px;
+        background-color: rgb(255, 255, 255);
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .menu{
+        width: 100%;
+        position: absolute;
+        display: none;
+        background-color: #1b222c;
+        padding: 5px 0;
+        margin: 0;
+        color: #9d9d9d;
+       
+    }
+    .menu .acc{
+        cursor: pointer;
+        width: 80%;
+        margin: 0;
+        padding: 10px 10px;
+        
+    }
+    .menu .acct span{
+        margin: 0 10px;
+       
+    }
+    .menu .acc:active{
+        background-color: #c15960;
+    }
+    ul{
+        transition: .7s;
+        margin: 0;
+        padding: 0;
+    }
+    ul div{
+        border-bottom: 1px solid #c15960;
+    }
+    ul div:last-child{
+        border-bottom: none;
+    }
+    li{
+        cursor: pointer;
+        margin: 0;
+        padding:8px 26px;
+        list-style-type: none;
+    }
+   li a{
+    color: #9d9d9d;
+        text-decoration: none;
+   }
+   
+    li:active{
+        background-color: #c15960; 
+    }
+    .details{
+        display: none;
+    }
+    /*header stops here*/
+
+    /*body starts here*/
+
+
+    .whole{
+       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom:  1px solid grey;;
+
+    }
+    .logo2{
+        margin: 20px ;
+        width: 90%;
+        height: 100px;
+    }
+    section{
+        margin: 0 20px 5px 20px;
+        padding-bottom: 25px;
+        display: flex;
+        align-self: flex-start;
+        flex-direction: column;
+       
+    }
+    section h2{
+        /* color: #589f99; */
+        margin: 0 10px;
+    }
+    section h3{
+        margin: 0;
+    }
+    section .wd{
+        font-size: 14px;
+        margin: 0px 10px;
+        padding-bottom: 0px; 
+    }
+    section .res{
+        width: 300px;
+        margin: 10px 10px 5px;
+        align-items: center;
+       
+    }
+    section span{
+        font-weight: 800;
+        font-size: 14px;
+        margin: 0px;
+        padding-bottom: 0px;
+    }
+    .up{
+        margin: 0px 10px 5px;
+    }
+    .up .orange{
+        list-style-type: none;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 900;
+        margin: 10px 0;
+    }
+    .up .orange a{
+        text-decoration: none;
+        color: #ad5c1a;
+    }
+    .whole .bot{
+       
+        font-size: 12px;
+        align-self: center;
+    }
+    .whole a{
+        color: #ad5c1a;
+        text-decoration: none;
+    }
+    .whole a:active{
+        color: #337ab7;
+        text-decoration: underline;
+    }
+    .whole .numbers a{
+        color: #337ab7;
+        text-decoration: none;
+    }
+    .linkHolders a {
+        color: #337ab7;
+        text-decoration: none;
+    }
+    .sec .btn{
+        z-index: -1;
+        position: relative;
+        right: 10px;
+        width: 300px;
+    }
+    section button{
+        padding: 5px 6px;
+        margin: 2px 0 2px;
+        font-size: 12px;
+        color: white;
+        left: 20px;
+        position: relative;
+        width: auto;
+        height: 25px;
+        border: 1px solid #2b5e8b;
+        border-radius: 4px;
+        background-color: #458cca;
+    }
+    #footerContainersss {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bot {
+        margin: 10px 0;
+    }
+    .bot a {
+        color: #337ab7;
+        text-decoration: none;
+    }
+
+
+/*body stops here*/
+
+
+</style>
+<body>
+    
+    <header>
+
+        <div class="head">
+            <img src="logo.JPG" class="logo" alt="cloud9adventures">
+            <div class="surround" id="bar" onclick="document.getElementById('menu').style.display='block'; document.getElementById('bar').style.display='none'; document.getElementById('bar2').style.display='block'">
+                
+                <div class="dash"></div>
+                <div class="dash"></div>
+                <div class="dash"></div>
+                
+            </div>
+            <div class="surround2" id="bar2" onclick="document.getElementById('menu').style.display='none'; document.getElementById('bar2').style.display='none'; document.getElementById('bar').style.display='block'; document.getElementById('deta').style.display='none'">
+               
+                <div class="dash2"></div>
+                <div class="dash2"></div>
+                <div class="dash2"></div>
+               
+            </div>
+        </div>
+
+        <div class="menu" id="menu">
+        
+            <div  class="acc" onclick="document.getElementById('deta').style.display='block'" style="display: flex; align-items: center; gap: 16px;"><span>Your Account</span><img style="width: 16px; filter: invert(90%);" src="./angle-down.png" alt="drop down"></div>
+    
+            <ul class="details" id="deta">
+                
+                <div>
+                    <li><a href="profile.html" >Your Profile</a></li>
+                    <li> <a href="change password.html">Change Password</a></li>
+                </div>
+                <div>
+                    <li><a href="./payment.html">Payment</a></li>
+                    <li><a href="reservation.html">Your Reservation</a></li>
+                    <li><a href="reservation.html">Your Credit cards</a></li>
+                    
+
+                </div>
+                <div>
+                    <li><a href="#">Log Out</a></li>
+                </div>
+
+            </ul>
+            
+        </div>
+    </header>
+    <div ><img style="width: 95%; min-height: fit-content;" src="logo2.PNG" alt="music meets paradise"class="logo2"></div>
+    <section class="sec">
+        
+        <div class="up">
+            <div class="orange"><a href="make a reservation.html"> Make a Reservation</a></div>
+            <div class="orange" ><a href="profile.html"> Your Profile </a></div>
+            <div class="orange"> <a href="your Credit Cards.html"> Your Credit Cards</a> </div>
+        
+        </div>
+    <h2>Your Reservations</h2>
+<div class="numbers linkHolders">
+    <div class="res"><h3>Reservation #: <a href="#">1629602</a> - Esther Bigley</h3></div>
+    <div class="wd"><span>Destination:</span> Sky Blue Sky . 2026</div>
+    <div class="wd">Concert Courtyard Double Sky Terrace Package King Bed</div>
+    <div class="wd"><span>Status:</span> Complete</div>
+    <div class="btn">
+        <button type="button">View/Modify</button>
+        <button type="button">Enter Flight Info</button>
+        <button type="button">Reservation FAC</button>
+        <button type="button">Transfer My Reservation</button>
+    </div>
+</div>
+
+<div class="linkHolders">
+    <div class="res"><h3>Reservation #: <a href="#">1425962</a> - Esther Bigley</h3></div>
+    <div class="wd"><span>Destination:</span> Sky Blue Sky . 2023</div>
+    <div class="wd">Deluxe Gold</div>
+    <div class="wd"><span>Status:</span> Complete</div>
+    <div class="btn">
+        <button type="button">View/Modify</button>
+        <button type="button">Enter Flight Info</button>
+     </div>
+</div>
+
+<div class="linkHolders">
+    <div class="res"><h3>Reservation #: <a href="#">1371357</a> - Esther Bigley</h3></div>
+    <div class="wd"><span>Destination:</span> Sky Blue Sky . 2022</div>
+    <div class="wd">Deluxe Gold</div>
+    <div class="wd"><span>Status:</span> Complete</div>
+    <div class="btn">
+        <button type="button">View/Modify</button>
+        <button type="button">Enter Flight Info</button>
+    </div>
+</div>
+
+
+
+
+</section>
+<div id="footerContainersss">
+    <div style="min-height: 1px; width: 95%; background-color: hsl(215, 24%, 20%);"></div>
+    <span class="bot">Web booking by <a href="">RedMagic</a></span>
+</div>
+</div>
+</body>
+</html>

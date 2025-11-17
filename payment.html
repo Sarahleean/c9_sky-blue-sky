@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<style>
+    @font-face {
+        font-family: helvetic;
+        src: url(./HelveticaNeueLight.otf);
+    }
+     body{
+        width: 100%;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* font-family: 'Montserrat', sans-serif; */
+        font-family: 'helvetic';
+        background-color: #F2E6D0;
+        margin: 0;
+        padding: 0;
+    }
+
+       /*header startss here*/
+    header{
+        top: 0;
+        position: sticky;
+        margin: 0;
+        z-index: 100000 !important;
+    }
+    .head{
+        width: 98%;
+        height: 50px;
+        margin: 0 auto;
+        padding: 0 5px;
+        background-color: #1b222c;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #c15960;
+        z-index: 100000 !important;
+    }
+    .head .logo{
+        width: 250px;
+    }
+    .surround{
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .surround2{
+        display: none;
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .dash{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .dash2{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .menu{
+        width: 100%;
+        position: absolute;
+        display: none;
+        background-color: #1b222c;
+        padding: 5px 0;
+        margin: 0;
+        color: #9d9d9d;
+       
+    }
+    .menu .acc{
+        width: 80%;
+        margin: 0;
+        padding: 10px 10px;
+        
+    }
+    .menu .acct span{
+        margin: 0 10px;
+       
+    }
+    .menu .acc:active{
+        background-color: #c15960;
+    }
+    ul{
+        transition: .7s;
+        margin: 0;
+        padding: 0;
+    }
+    ul a{
+        text-decoration: none;
+        color: #b1b1b8;
+    }
+    ul div{
+        border-bottom: 1px solid #c15960;
+    }
+    ul div:last-child{
+        border-bottom: none;
+    }
+    li{
+        margin: 0;
+        padding:8px 26px;
+        list-style-type: none;
+    }
+   
+    li:active{
+        background-color: #c15960; 
+    }
+    .details{
+        display: none;
+    }
+    /*header stops here*/
+
+    /*body starts here*/
+    .whole{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .whole .whollyPic-Container {
+        /* height: 160px; */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .whole .first{
+        align-items: center;
+        position: relative;
+        margin: 0;
+        width: 99%;
+        z-index: -1;
+    }
+    section{
+        margin: 10px 20px 5px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        border-bottom:  1px solid grey;
+    
+    }
+    .top Span {
+          background: transparent url(https://www.cloud9reservations.com/Booking/Styles/Cloud9/gfx/breadcrumb_arrow-dk.png) no-repeat scroll left center;
+
+    }
+    .top span {
+         display: inline;
+        line-height: 1.6em;
+        padding: 0 0 0 14px;
+        text-decoration: none;
+    }
+    .top{
+        padding-bottom: 15px;
+        border-bottom: 1px solid #b6934f;
+       
+    }
+    .top #payment_bold {
+        font-weight: bold;
+    }
+    @font-face {
+        font-family: fontmutal;
+        src: url(./Montserrat-VariableFont_wght.ttf);
+    }
+
+    .token-info h1 {
+        font-family: 'fontmutal', sans-serif;
+        font-weight: 900 !important;
+        /* color: #301940; */
+        color: hsl(211, 64%, 35%);
+        font-size: 30px;
+    }
+    .UIDCODE {
+        color: hsl(25, 57%, 49%);
+        display: inline;
+    }
+
+    .orange{
+       
+        font-weight: bold;
+        margin:  -5px 0 5px;
+        color: #bb550c;
+    }
+    .purple{
+        font-weight: bold;
+        margin:  5px 0 30px;
+        /* color: #3D2059; */
+        /* color: hsl(211, 64%, 35%); */
+    }
+    .bld{
+       
+        font-weight: 700;
+    }
+    .spc{
+        margin: 10px 0 1px;
+    }
+    .he h3 {
+        color: hsl(211, 64%, 35%);
+    }
+    .he .sml{
+        margin: 4px 0;
+    }
+    .print{
+        margin: 10px 0;
+        font-weight: 700;
+        color: #245156
+    }
+    .table{
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0px 0px 0px;
+    }
+    .table .topic{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        padding-bottom:5px ;
+        border-bottom: 1px solid black;
+    }
+    .table-head{
+        margin-top: 5px;
+        font-weight: 700;
+        margin-right: 30px;
+    }
+    .table-head22{
+        /* width: 50%; */
+        margin-top: 5px;
+        font-weight: 700;
+        margin-right: 8px;
+    }
+    .table-head:last-child{
+        margin-right: 0;
+    }
+    .borde{
+        flex-direction: row;
+        display: flex;
+        justify-content:space-between;
+        padding-bottom:5px ;
+        margin-top: 5px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .bord{
+        flex-direction: row;
+        display: flex;
+        justify-content:space-between;
+        padding-bottom:5px ;
+        margin-top: 5px;
+}
+    .bord-11{
+        flex-direction: row;
+        display: flex;
+        justify-content:space-between;
+        padding-bottom:5px ;
+        margin-top: 5px;
+}
+    .table .data{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+
+    }
+    .table .data .table-content{
+        width: 100px;
+        margin-right: 18px;
+    }
+    .table-content{
+        width:90px;
+        margin-right: 10px;
+        padding-bottom:10px ;
+    }
+    .table-conten22{
+        /* width: 25%; */
+        max-height: fit-content; text-align: start; transform: translateX(-18px); padding: 0; margin-top: auto;
+    }
+    .table-middle{
+        position: relative;
+        right: 65px;
+        margin-left: 45px;
+    }
+    .final{
+        /* width: 25%; */
+        position: relative;
+        right: 5px;
+        max-height: fit-content; text-align: start; padding: 0;
+        /* margin-top: auto; */
+    }
+    .fee{
+        position: relative;
+        left:0;
+        text-align: end;
+    }
+    .table-content:last-child{
+        margin-right: 0;
+        width: 65px;
+    }
+    .total{
+        margin-top: 10px;
+        font-weight: 700;
+    }
+    .total-borde{
+        padding-bottom: 0;
+        border-bottom:  2px solid black;
+    }
+    
+    
+
+
+
+
+
+
+    .footyy {
+        position: relative;
+    }
+    
+    .bot{
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        align-self: center;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .bot a {
+        color: rgb(255, 255, 255);
+    }
+    section a{
+        color: #337ab7;
+        text-decoration: none;
+    }
+
+    .footyy img {
+        width: 100%;
+    }
+
+    /*body stops here*/
+
+    </style>
+    
+<body>
+    
+    <header>
+
+        <div class="head">
+            <img src="logo.JPG" class="logo" alt="cloud9adventures">
+            <div class="surround" id="bar" onclick="document.getElementById('menu').style.display='block'; document.getElementById('bar').style.display='none'; document.getElementById('bar2').style.display='block'">
+                
+                <div class="dash"></div>
+                <div class="dash"></div>
+                <div class="dash"></div>
+                
+            </div>
+            <div class="surround2" id="bar2" onclick="document.getElementById('menu').style.display='none'; document.getElementById('bar2').style.display='none'; document.getElementById('bar').style.display='block'; document.getElementById('deta').style.display='none'">
+               
+                <div class="dash2"></div>
+                <div class="dash2"></div>
+                <div class="dash2"></div>
+               
+            </div>
+        </div>
+
+    <div class="menu" id="menu">
+        
+        <div  class="acc" onclick="document.getElementById('deta').style.display='block'" style="display: flex; align-items: center; gap: 16px;"><span>Your Account</span><img style="width: 16px; filter: invert(90%);" src="./angle-down.png" alt="drop down"></div>
+
+            <ul class="details" id="deta">
+            
+                <div>
+                    <li><a href="profile.html" >Your Profile</a></li>
+                    <li> <a href="change password.html">Change Password</a></li>
+                </div>
+                <div>
+                    <li><a href="./payment.html">Payment</a></li>
+                    <li><a href="reservation.html">Your Reservation</a></li>
+                    <li><a href="reservation.html">Your Credit cards</a></li>
+                    
+
+                </div>
+                <div>
+                    <li><a href="#">Log Out</a></li>
+                </div>
+
+            </ul>
+        
+    </div>
+    
+</header>
+
+<div class="whole">
+    <div class="whollyPic-Container">
+        <img src="./header.png" alt="" class="first">
+    </div>
+<section >
+    <div class="token-info">
+    <h1>Reservation: <div class="UIDCODE"> 1629602</div> <br>Sky Blue Sky • 2026</h1>
+    </div>
+    <div class="top">
+        <span>People</span>
+       <span>Accommodations</span>
+       <span>Guest Details</span>
+       <span id="payment_bold">Payment</span>
+       <span>Confirmation</span>
+    </div>
+    <div class="he">
+        <h3>Sky Blue Sky • 2026</h3>
+        <div class="orange">Hard Rock Hotel Riviera Maya</div>
+        <div class="purple">January 15, 2026 - January 19, 2026</div>
+        <span class="bld spc">Guest:</span><span> 2 Adult</span>
+        <div class="bld spc">Suite Type:</div>
+        <span class="sml">Concert Courtyard Double Sky Terrace Package King Bed</span>
+        <div class="bld spc">Additional Items:</div>
+        <div  class="sml">Jan. 14th Pre Night </div>
+        <div class="sml">Jan. 20th Post Night</div>
+        <div class="sml">2x Roundtrip Transportation</div>
+        <span class="bld spc">Terms and condition status:</span><span> Accepted</span>
+        <div class="spc" ><span class="bld">Total Amount:</span><span> 7,500.00</span></div>
+        <div class="spc"><span class="bld">Paid to Date:</span><span> 7,500.00</span></div>
+    </div>
+
+    
+    <div class="print">Print Friendly View</div>
+    <div class="bld"> Reservation Details: Please review your reservation below. you can remove any add-ons at this time by clicking on "Remove" in the add ons selection of your confirmation.</div><span>Add-ons must be paid for in full at the time of purchase. they will be added to your total deposit amount due on the check-out </span>
+
+    <div class="table">
+        <div class="topic"> 
+            <div class="table-head">Guest Name</div>
+            <div class="table-head" >Email</div>
+        </div>
+        <div class="data"> 
+            <div class="table-content name">Esther Bigley<br></div>
+            <div class="table-content" >estherdbigley00@gmail.com</div>
+        </div >
+        <div>
+        <div class="table-head">Sky Blue Sky - 2026</div>
+        <div class="table-head">(January 15, 2026 -</div>
+        <div class="table-head">January 19, 2026)</div>
+        </div>
+        <div class="borde"> 
+            <div class="table-head"> Item</div>
+            <div class="table-head" >Category</div>
+            <div class="table-head" >Guest</div>
+            <div class="table-head" >Amount</div>
+        </div>
+
+
+        <div class="bord-11"> 
+            <div class="table-content"> Hard Rock Riviera Maya</div>
+            <div class="table-content" >Concert Courtyard Double Sky Terrace Package King Bed</div>
+            <div class="table-content" >Esther Bigley</div>
+            <div class="table-content final"  >$2.799.00</div>
+        </div>
+        
+         <div class="bord "> 
+            <div class="table-content"> Ticketing Fee</div>
+            <div class="table-content table-middle" >Ticketing Fee</div>
+            <div></div>
+            <div class="table-content last fee" >$49.00</div>
+         </div>
+
+
+         <div class="bord-11"> 
+            <div class="table-content"> Hard Rock Riviera Maya</div>
+            <div class="table-content" >Concert Courtyard Double Sky Terrace Package King Bed</div>
+            <div class="table-content" >Adult 2</div>
+            <div class="table-content final" >$2.799.00</div>
+        </div>
+        
+         <div class="bord"> 
+            <div class="table-content"> Ticketing Fee</div>
+            <div class="table-content table-middle" >Ticketing Fee</div>
+            <div></div>
+            <div class="table-content last fee" >$49.00</div>
+         </div>
+        
+
+         <div class="bord total-borde"> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Item Total</div>
+            <div class="table-content last total final" >$5,696.00</div>
+         </div>
+         <div class="bord"> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content " >Esther Bigley Responsibility</div>
+            <div class="table-content last final " >$5,696.00</div>
+         </div>
+
+
+         <div>
+            <div class="table-head">Hard Rock Additional Pre-Game </div>
+            <div class="table-head">(Non-Refundable)</div>
+            <div class="table-head">(January 14th, 2026 -
+           January 19th, 2026)</div>
+        </div>
+        <div class="borde"> 
+            <div class="table-head"> Item</div>
+            <div class="table-head" >Category</div>
+            <div class="table-head" >Guest</div>
+            <div class="table-head" >Amount</div>
+        </div>
+        <div class="bord"> 
+            <div class="table-content"> Pre-Night  Jan 14th </div>
+            <div class="table-content" >Concert Courtyard Double Sky Terrace Package King Bed</div>
+            <div class="table-content" >Esther Bigley</div>
+            <div class="table-content fee" >$409.00</div>
+        </div>
+        <div class="bord  total-borde"> 
+            <div class="table-content"> Pre-Night  Jan 14th </div>
+            <div class="table-content" >Concert Courtyard Double Sky Terrace Package King Bed</div>
+            <div class="table-content" >Adult 2</div>
+            <div class="table-content fee" >$409.00</div>
+        </div>
+        <div class="bord "> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Item Total</div>
+            <div class="table-content total fee " >$818.00</div>
+         </div>
+        <div class="bord"> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content " >Esther Bigley Responsibility</div>
+            <div class="table-content final" ></div>
+         </div>
+
+         <div>
+            <div class="table-head">Hard Rock Additional Post Night </div>
+            <div class="table-head">(Non-Refundable)</div>
+            <div class="table-head">(January 15th, 2026 -
+           January 20th, 2026)</div>
+        </div>
+        <div class="borde"> 
+            <div class="table-head"> Item</div>
+            <div class="table-head" >Category</div>
+            <div class="table-head" >Guest</div>
+            <div class="table-head" >Amount</div>
+        </div>
+        <div class="bord"> 
+            <div class="table-content"> Post-Night  Jan 20th </div>
+            <div class="table-content" >Concert Courtyard Double Sky Terrace Package King Bed</div>
+            <div class="table-content" >Esther Bigley</div>
+            <div class="table-content fee" >$409.00</div>
+        </div>
+        <div class="bord  total-borde"> 
+            <div class="table-content"> Post-Night  Jan 20th </div>
+            <div class="table-content" >Concert Courtyard Double Sky Terrace Package King Bed</div>
+            <div class="table-content" >Adult 2</div>
+            <div class="table-content fee" >$409.00</div>
+        </div>
+        <div class="bord "> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Item Total</div>
+            <div class="table-content total fee " >$818.00</div>
+         </div>
+        <div class="bord"> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content " >Esther Bigley Responsibility</div>
+            <div class="table-content final" ></div>
+         </div>
+        <div class="bord  total-borde"> 
+            <div class="table-content"> </div>
+            <div class="table-content" ></div>
+            <div class="table-content" ></div>
+            <div class="table-content fee" ></div>
+        </div>
+
+          <div>
+            <div class="table-head">Roundtrip Airport Shuttle </div>
+            <div class="table-head">(Non-Refundable)</div>
+            <div class="table-head"></div>
+        </div>
+        <div class="borde"> 
+            <div class="table-head"> Item</div>
+            <div class="table-head" >Category</div>
+            <div class="table-head" >Guest</div>
+            <div class="table-head" >Amount</div>
+        </div>
+        <div class="bord"> 
+            <div class="table-content">Roundtrip Transportation</div>
+            <div class="table-content" >Roundtrip Transportation</div>
+            <div class="table-content" >Esther Bigley</div>
+            <div class="table-content fee" >$84.00</div>
+        </div>
+        <div class="bord  total-borde"> 
+            <div class="table-content">Roundtrip Transportation</div>
+            <div class="table-content" >Roundtrip Transportation</div>
+            <div class="table-content" >Adult 2</div>
+            <div class="table-content fee" >$84.00</div>
+        </div>
+        <div class="bord "> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Item Total</div>
+            <div class="table-content total fee " >$168</div>
+         </div>
+        <div class="bord"> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content " >Esther Bigley Responsibility</div>
+            <div class="table-content final" ></div>
+         </div>
+        <div class="bord  total-borde"> 
+            <!-- <div class="table-content"> </div>
+            <div class="table-content" ></div>
+            <div class="table-content" ></div>
+            <div class="table-content fee" ></div> -->
+        </div>
+        
+        <div class="bord "> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Reservation Total</div>
+            <div class="table-content total fee " >$7,500.00</div>
+         </div>
+         
+        <div class="bord"> 
+            <div class="table-head22">Esther Bigley Responsibility </div>
+            <!-- <div class="table-content"></div> -->
+            <!-- <div class="table-content">T</div> -->
+             <p style="margin: 0; color: transparent;">na</p>
+            <div class="table-conten22">Item(s) Total</div>
+            <div class="table-content final">$7,500.00</div>
+         </div>
+         <!-- <div class="bord">  -->
+            <!-- <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content " ></div>
+            <div class="table-content final" ></div> -->
+         <!-- </div> -->
+        <div class="bord  total-borde"> 
+            <!-- <div class="table-content"> </div> -->
+            <!-- <div class="table-content" ></div> -->
+            <!-- <div class="table-content" ></div> -->
+            <!-- <div class="table-content fee" ></div> -->
+        </div>
+        
+        <div class="bord "> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Total Cost Paid To Date</div>
+            <div class="table-content total fee " >$7,500.00</div>
+         </div>
+          <div class="bord "> 
+            <div class="table-content"></div>
+            <div class="table-content"></div>
+            <div class="table-content total" >Balance Due</div>
+            <div class="table-content total fee " >$0.00</div>
+         </div>
+    </div>
+</section>
+<div class="footyy" >
+    <img src="footer2.png">
+<span  class="bot">Web booking by <a href="">RezMagic</a></span>
+</div>
+</div>
+</body>
+</html>

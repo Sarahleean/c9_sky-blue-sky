@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<style>
+     body{
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f3edd0;
+        margin: 0;
+        padding: 0;
+    }
+
+       /*header startss here*/
+    header{
+        width: 100%;
+        z-index: 2;
+        top: 0;
+        position: sticky;
+        margin: 0;
+    }
+    .head{
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0 5px;
+        background-color: #1b222c;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #c15960;
+    }
+    .head .logo{
+        width: 250px;
+    }
+    .surround{
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .surround2{
+        display: none;
+        cursor: pointer;
+        border: 1px solid #313540;
+        border-radius: 4px;
+        padding-left: 6px;
+    }
+    .dash{
+       
+        border: none;
+        margin: 5px;
+        background-color: white;
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .dash2{
+       
+        border: none;
+        margin: 5px;
+        background-color: rgb(255, 255, 255);
+        height: 3px;
+        width: 30px;
+        border-radius: 2px;
+    }
+    .menu{
+        width: 100%;
+        position: absolute;
+        display: none;
+        background-color: #1b222c;
+        padding: 5px 0;
+        margin: 0;
+        color: #9d9d9d;
+       
+    }
+    .menu .acc{
+        width: 80%;
+        margin: 0;
+        padding: 10px 10px;
+        
+    }
+    .menu .acct span{
+        margin: 0 10px;
+       
+    }
+    .menu .acc:active{
+        background-color: #c15960;
+    }
+    ul{
+        transition: .7s;
+        margin: 0;
+        padding: 0;
+    }
+    ul div{
+        border-bottom: 1px solid #c15960;
+    }
+    ul div:last-child{
+        border-bottom: none;
+    }
+
+    li{
+        cursor: pointer;
+        margin: 0;
+        padding:8px 26px;
+        list-style-type: none;
+    }
+   li a{
+    color: #9d9d9d;
+        text-decoration: none;
+   }
+   
+    li:active{
+        background-color: #c15960; 
+    }
+    .details{
+        display: none;
+    }
+    /*header stops here*/
+    
+   
+    /*body starts here*/
+    section{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    section .logo2{
+        margin: 20px 0px 20px 20px;
+        width: 90%;
+        height: 100px;
+    }
+    section h2{
+        color: #589f99;
+        margin: 0 20px;
+    }
+    section .wd{
+        font-size: 14px;
+        margin: 10px 20px;
+        padding-bottom: 20px;
+    
+    }
+    section span{
+        font-size: 12px;
+        align-self: center;
+    }
+    section a{
+        
+        color: #337ab7;
+        text-decoration: none;
+    }
+    /* #FooterCenter a {
+        color: #337ab7;
+        text-decoration: none;
+    } */
+    section h3{
+        padding-bottom: 5px;
+        border-bottom: 2px solid #e5e5e5;
+        margin: 0 20px 20px
+    }
+    section label{
+        margin: 0 20px;
+    }
+    section input{
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        margin: 5px 20px 10px;
+        width: 300px;
+        height: 30px;
+        font-size: 16px;
+        color: #555555;
+    }
+    i{
+        margin-right: 5px;
+        color: red;
+    }
+
+    section .email{
+        z-index: 1;
+        position: relative;
+        top: 10px;
+        width: 30px;
+        margin-top: -10px;
+        left: -70px;
+    }
+    section select{
+        border: 1px solid #cccccc;
+        margin: 5px 20px 10px;
+        width: 308px;
+        height: 30px;
+        font-size: 16px;
+        color: #555555;
+    }
+    .l{
+        margin: 8px 0 2px;
+    }
+    .date{
+        text-decoration: none;
+        margin: -10px 20px 10px 20px;
+    }
+    .contacts{
+        margin: 10px 20px;
+        padding: 0;
+        width: 305px;
+        border: 1px solid rgb(171, 160, 160);
+        border-radius:4px; 
+        display: flex;
+        flex-direction: row;
+        justify-content:start;
+        align-items: center;
+    }
+    .contacts select{
+        background-color: rgb(218, 215, 215);
+        margin: 0;
+        border: none;
+        width: 60px;
+    }
+    .contacts input{
+        width: 240px;
+        margin: 0;
+        border: none;
+    }
+    .lastly{
+        margin: 0 20px 20px;
+    }
+    .submit{
+        margin: -10px 20px 10px;
+        text-align: center;
+        width: 40px;
+        height: 20px;
+        font-size: 10px;
+        color: white;
+        background-color: #6363a1;
+        border: 1px solid #57578d;
+    }
+
+ 
+/*body stops here*/
+
+
+</style>
+<body>
+    
+    <header>
+
+        <div class="head">
+            <img src="logo.JPG" class="logo" alt="cloud9adventures">
+            <div class="surround" id="bar" onclick="document.getElementById('menu').style.display='block'; document.getElementById('bar').style.display='none'; document.getElementById('bar2').style.display='block'">
+                
+                <div class="dash"></div>
+                <div class="dash"></div>
+                <div class="dash"></div>
+                
+            </div>
+            <div class="surround2" id="bar2" onclick="document.getElementById('menu').style.display='none'; document.getElementById('bar2').style.display='none'; document.getElementById('bar').style.display='block'; document.getElementById('deta').style.display='none'">
+               
+                <div class="dash2"></div>
+                <div class="dash2"></div>
+                <div class="dash2"></div>
+               
+            </div>
+        </div>
+
+        <div class="menu" id="menu">
+        
+            <div  class="acc" onclick="document.getElementById('deta').style.display='block'" style="display: flex; align-items: center; gap: 16px;"><span>Your Account</span><img style="width: 16px; filter: invert(90%);" src="./angle-down.png" alt="drop down"></div>
+    
+            <ul class="details" id="deta">
+                
+                <div>
+                    <li ><a href="profile.html">Your Profile</a></li>
+                    <li><a href="change password.html"> Change Password</a></li>
+                </div>
+                <div>
+                    <li><a href="reservation.html">Your Reservation</a></li>
+                </div>
+                <div>
+                    <li><a href="">Log Out</a></li>
+                </div>
+
+            </ul>
+            
+        </div>
+    </header>
+    <section>
+        <div ><img style="width: 95%; min-height: fit-content;" src="logo2.PNG" alt="music meets paradise"class="logo2"></div>
+        <h2>Your Profile</h2>
+        <p class="wd"> Use the form below to review and modify your personal information. All fields marked by an asterisk * are required</p>
+        <h3>Account information</h3>
+        <div class="l"><label for="c"><i>*</i>Email</label></div>
+        <div><input id="c"  type="text" value="estherdbigley00@gmail.com"><img class="email" src="logo3.PNG" width="40"></div>
+        <div class="l"><label for="co">Username</label></div>
+        <div>
+        <input id="co" type="text" Value="estherdbigley"></div>
+        <div class="l"><label for="con"><i>*</i>Security Question</label></div>
+        <div>
+        <select id="con"  type="text" >
+        <option >what is the name of your first pet</option>
+        </select></div>
+        <div class="l"><label for="cont"><i>*</i>Secrity Question Answer</label></div>
+        <div><input id="cont" type="text" value="ChuChu"></div>
+        <h3>Personal information</h3>
+        <div class="l"><label for="conti"><i>*</i>Legal First Name</label></div>
+        <div><input id="conti" type="text" value="Esther" disabled></div>
+        <div class="l"><label for="contin"><i>*</i>Legal Last Name</label></div>
+        <div><input id="contin" type="text" value="Bigley" disabled></div>
+        <div class="l"><label for="continu"><i>*</i> Gender</label></div>
+        <div>
+        <select id="continu"  type="text" >
+            <option >Female</option>
+        <option >Male</option>
+        </select></div>
+        <div class="l"><label for="continue"><i>*</i>Date of Birth</label></div>
+        <div><input id="continue" type="text" value="08/06/1989"></div>
+        <!-- <i class="date">MM/DD/YYYY</i> -->
+        <h3>Mailing Address</h3>
+        <div class="l"><label for="addres1"><i>*</i>Street Address</label></div>
+        <div><input id="addres1" type="text" value="8531 CRAIGER CT ANCHORAGE, AK 99507 USA"></div>
+        <div class="l"><label for="addres2">Street Address 2</label></div>
+        <div><input id="addres2" type="text" value="8531 CRAIGER CT ANCHORAGE, AK 99507 USA"></div>
+        <div class="l"><label for="city"><i>*</i>City</label></div>
+        <div><input id="city" type="text" value="Alaska"></div>
+        <div class="l"><label for="state"><i>*</i>State/Province</label></div>
+        <select id="state"  type="text" >
+            <option >AK</option>
+            <option >CA</option>
+            <option >KS</option>
+        </select></div>
+        <!-- <i class="date">Please enter your state abreviation (Ex. FL, NY, CA)</i> -->
+        <div class="l"><label for="zip"><i>*</i>Zip/Postal Code</label></div>
+        <div><input id="zip" type="text" value="99501"></div>
+        <div class="l"><label for="count"><i>*</i>Country</label></div>
+        <select id="count"  type="text" >
+            <option >USA</option>
+            <option >CANADA</option>
+        </select></div>
+        <h3>Contact Phone</h3>
+        <div class="l"><label for="phone1">Daytime Phone</label></div>
+        <div class="contacts">
+            <select name="day-contact">
+                <option>+1</option>  
+                <option>+245</option>
+            </select>
+            <input id="phone1" value="(747) 204-8450">
+        </div>
+
+        <div class="l"><label for="phone2">Alternate Phone</label></div>
+        <div class="contacts">
+            <select  name="alt-contact">
+                <option>+1</option>  
+                <option>+5</option>
+            </select>
+            <input id="phone2" value="(747) 204-8450">
+        </div>
+
+        <div class="l"><label for="phone3">Cell Phone</label></div>
+        <div class="contacts">
+            <select name="cell-contact">
+                <option>+1</option>  
+                <option>+245</option>
+            </select>
+            <input id="phone3" value="(747) 204-8450">
+        </div>
+        <div class="lastly">
+            <i>*</i>
+            <span>At least one contact phone is required </span>
+        </div>
+        <button class="submit" type="button">Save</button>
+        <span id="FooterCenter">Web booking by <a href="">RedMagic</a></span>
+    
+
+    </section>
+
+</body>
+</html>
